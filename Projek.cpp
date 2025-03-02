@@ -22,6 +22,27 @@ void masuk(){
     cin >> keuangan[jumlahmasuk].jumlah;
     jumlahmasuk++;
 }
+
+void cari(){
+    string cari;
+    cout << "|=======================|" << endl;
+    cout << "|        Search         |" << endl;
+    cout << "|=======================|" << endl;
+    cout << "Masukkan tanggal (DD/MM/YYYY): ";
+    cin >> cari;
+    system("cls");
+    for (int i = 0; i < jumlahmasuk; i++) {
+        if (keuangan[i].tanggal == cari) {
+            cout << "|=======================|" << endl;
+            cout << "|     Data Keuangan     | " << endl;
+            cout << "|=======================|" << endl;
+            cout << "Tanggal: " << keuangan[i].tanggal << endl;
+            cout << "Jenis: " << keuangan[i].jenis << endl;
+            cout << "Jumlah: " << keuangan[i].jumlah << endl;
+        }
+    }
+}
+
 void menu (){
     cout << "|=======================|" << endl;
     cout << "|  Menjemen Keuangan    |" << endl;
@@ -29,7 +50,8 @@ void menu (){
     cout << "| 1. Masukan Transaksi  |" << endl;
     cout << "| 2. Lihat Transaksi    |" << endl;
     cout << "| 3. Lihat Saldo        |" << endl;
-    cout << "| 4. Keluar             |" << endl;
+    cout << "| 4. Search             |" << endl;
+    cout << "| 5. Keluar             |" << endl;
     cout << "|=======================|" << endl;
 }
 void lihat(){
@@ -77,6 +99,9 @@ int main() {
                 saldo();
                 break;
             case 4:
+                cari();
+                break;
+            case 5:
                 return 0;
             default:
                 cout << "Pilihan tidak valid." << endl;
@@ -91,4 +116,5 @@ int main() {
     return 0;
 }
 
+   
    
